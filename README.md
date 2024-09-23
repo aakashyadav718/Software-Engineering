@@ -1,8 +1,4 @@
-# CS455
-
-- Group Member:
-  - Aakash Yadav (210010)
-  - Harshit Patel (210424)
+# CS455 [ Aakash Yadav (210010) ]
 - Deployed Game: [Play](https://harshitptl21.github.io/CS455/)
 
 ## Assignment 1: Develop a Game
