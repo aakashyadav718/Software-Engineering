@@ -1,0 +1,29 @@
+{
+  "name": "cs455-main",
+  "version": "1.0.0",
+  "description": "- Group Member:   - Aakash Yadav (210010)   - Harshit Patel (210424) - Deployed Game: [Play](https://harshitptl21.github.io/CS455/)",
+  "main": "index.js",
+  "scripts": {
+    "lint:js": "eslint Game",
+    "lint:css": "stylelint 'Game/**/*.css'",
+    "lint:html": "htmlhint 'index.html'",
+    "check:duplication": "jscpd --min-lines 6 ./Game index.html",
+    "test": "karma start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "eslint-plugin-complexity": "^1.0.2",
+    "globals": "^15.9.0",
+    "htmlhint": "^1.1.4",
+    "jscpd": "^4.0.5",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.1",
+    "karma-jasmine": "^5.1.0",
+    "stylelint": "^16.9.0"
+  }
+}
