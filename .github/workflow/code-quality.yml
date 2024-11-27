@@ -1,0 +1,47 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js latest version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint:js
+
+      - name: Run Stylelint
+        run: npm run lint:css
+
+      - name: Run HTMLHint
+        run: npm run lint:html
+
+      - name: Run JSCPD
+        run: npm run check:duplication
+        
+      - name: Karma unit testing
+        run: npm run test
+        
+      - name: Install composer dependencies
+        run: composer install
+        
+      - name: Starting php server
+        run: nohup php -S localhost:8000 > server.log 2>&1 &
+
+      - name: Integration testing
+        run: vendor/bin/phpunit tests/*.php
